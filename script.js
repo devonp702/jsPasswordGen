@@ -70,14 +70,14 @@ function generatePassword() {
   //   var i = 0; // the length of the array
   //   var j = 0; // a random number
   //   var temp = null; // the place holder for the swap.
-  //   for (i = (pwdStr.length)*2 - 1; i > 0; i -= 1) {
+  //   for (i = pwdStr.length - 1; i > 0; i -= 1) {
   //     j = Math.floor(Math.random() * (i + 1));
   //     temp = mixer[i]; // the first number is now going to shuffle
   //     mixer[i] = mixer[j]; // the first one is replaced with a random one
   //     mixer[j] = temp; //the random character, becomes the next to swap.
   //   }
-  //   pwdStr = mixer.toString(); // put the array back into a string.
-  //   pwdStr = pwdStr.replace(",", null);
+  //   pwdStr = mixer.toString(); // put the array back into a string but adds too many commas.
+  //   pwdStr = pwdStr.replace(",",""); //try to remove the commas
   //   return pwdStr; //deliver the package
   // }
 
