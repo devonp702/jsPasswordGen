@@ -65,20 +65,21 @@ function generatePassword() {
     return getNum;
   }
 
-  function randomize(string) { //using Fisher Yates Shuffle
-    var mixer = string.split(" "); // break password into an array
-    var i = 0; // the length of the array
-    var j = 0; // a random number
-    var temp = null; // the place holder for the swap.
-    for (i = mixer.length - 1; i > 0; i -= 1) {
-      j = Math.floor(Math.random() * (i + 1));
-      temp = mixer[i]; // the first number is now going to shuffle
-      mixer[i] = mixer[j]; // the first one is replaced with a random one
-      mixer[j] = temp; //the random character, becomes the next to swap.
-    }
-    pwdStr = mixer.toString(); // put the array back into a string.
-    return pwdStr; //deliver the package
-  }
+  // function randomize(string) { //using Fisher Yates Shuffle
+  //   var mixer = string.split(" "); // break password into an array
+  //   var i = 0; // the length of the array
+  //   var j = 0; // a random number
+  //   var temp = null; // the place holder for the swap.
+  //   for (i = (pwdStr.length)*2 - 1; i > 0; i -= 1) {
+  //     j = Math.floor(Math.random() * (i + 1));
+  //     temp = mixer[i]; // the first number is now going to shuffle
+  //     mixer[i] = mixer[j]; // the first one is replaced with a random one
+  //     mixer[j] = temp; //the random character, becomes the next to swap.
+  //   }
+  //   pwdStr = mixer.toString(); // put the array back into a string.
+  //   pwdStr = pwdStr.replace(",", null);
+  //   return pwdStr; //deliver the package
+  // }
 
   function checkPass(string) { //Did The numbers round out ok?
     if (pwdStr.length > pwdLen) { // Too long? chop it down
@@ -109,6 +110,6 @@ function generatePassword() {
     pwdStr += getRand(specials, getNum); // get some symbols
   }
   checkPass(pwdStr); // is it the correct length?
-  pwdStr = randomize(pwdStr); // randomize final string
+  // randomize(pwdStr); // randomize final string
   return (pwdStr); //this delivers the final password
 }
