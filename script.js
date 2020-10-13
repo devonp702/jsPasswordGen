@@ -65,21 +65,21 @@ function generatePassword() {
     return getNum;
   }
 
-  // function randomize(string) { //using Fisher Yates Shuffle
-  //   var mixer = string.split(" "); // break password into an array
-  //   var i = 0; // the length of the array
-  //   var j = 0; // a random number
-  //   var temp = null; // the place holder for the swap.
-  //   for (i = pwdStr.length - 1; i > 0; i -= 1) {
-  //     j = Math.floor(Math.random() * (i + 1));
-  //     temp = mixer[i]; // the first number is now going to shuffle
-  //     mixer[i] = mixer[j]; // the first one is replaced with a random one
-  //     mixer[j] = temp; //the random character, becomes the next to swap.
-  //   }
-  //   pwdStr = mixer.toString(); // put the array back into a string but adds too many commas.
-  //   pwdStr = pwdStr.replace(",",""); //try to remove the commas
-  //   return pwdStr; //deliver the package
-  // }
+  function randomize(string) { //using Fisher Yates Shuffle
+    var mixer = string.split(""); // break password into an array
+    var i = 0; // the length of the array
+    var j = 0; // a random number
+    var temp = null; // the place holder for the swap.
+    for (i = pwdStr.length - 1; i > 0; i -= 1) {
+      j = Math.floor(Math.random() * (i + 1));
+      console.log(mixer);
+      temp = mixer[i]; // the first number is now going to shuffle
+      mixer[i] = mixer[j]; // the first one is replaced with a random one
+      mixer[j] = temp; //the random character, becomes the next to swap.
+    }
+    var newPass = mixer.toString(); // put the array back into a string but adds too many commas.
+    pwdStr = newPass.replace(/,/g,""); //try to remove the commas
+  }
 
   function checkPass(string) { //Did The numbers round out ok?
     if (pwdStr.length > pwdLen) { // Too long? chop it down
@@ -110,6 +110,6 @@ function generatePassword() {
     pwdStr += getRand(specials, getNum); // get some symbols
   }
   checkPass(pwdStr); // is it the correct length?
-  // randomize(pwdStr); // randomize final string
+  randomize(pwdStr); // randomize final string
   return (pwdStr); //this delivers the final password
 }

@@ -1,5 +1,7 @@
 # jsPasswordGen
 [Lives Here](https://github.com/devonp702/jsPasswordGen)
+[Deployed Here](https://devonp702.github.io/jsPasswordGen/)
+![Screenshot](screenshot.png)
 
 ## Introduction
 Website uses javascript to create a unique custom password when button is pushed. 
